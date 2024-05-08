@@ -47,7 +47,7 @@
             <textarea id="comments" name="comments" rows="4"></textarea>
 
             <button type="submit" id="submit">申し込む</button>
-            <button id="sanka">参加者一覧</button>
+            <!-- <button id="sanka">参加者一覧</button> -->
         </form>
         <!-- <div> 名前：<input type="text" id=" uname"> </div>
         <div>
@@ -134,30 +134,30 @@
 
 //         $("#output").html(htmlElements);
 
-    $("#sanka").on("click", function () {
-        const htmlElements = []; // 参加者一覧のHTML要素を格納する配列
-        onSnapshot(q, (querySnapshot) => { // Firestoreのコレクション"lp"からデータを取得
-            querySnapshot.forEach((doc) => { // 各ドキュメントに対して処理を行う
-                const data = doc.data(); // ドキュメントのデータを取得
-                // 参加者の情報をHTMLに変換し、配列に追加
-                htmlElements.push(`
-                <li>
-                    <p>イベント名: ${data.eventName}</p>
-                    <p>希望日時: ${data.preferredDateTime}</p>
-                    <p>名前（フリガナ）: ${data.nameKana}</p>
-                    <p>メールアドレス: ${data.email}</p>
-                    <p>電話番号: ${data.phone}</p>
-                    <p>参加人数: ${data.attendees}</p>
-                    <p>支払い方法: ${data.paymentMethod}</p>
-                    <p>意見または質問: ${data.comments}</p>
-                    <p>申込日時: ${data.time}</p>
-                </li>
-            `);
-            });
-            // 参加者一覧を表示する要素にHTMLをセット
-            $("#output").html(htmlElements.join(""));
-        });
-    });
+    // $("#sanka").on("click", function () {
+    //     const htmlElements = []; // 参加者一覧のHTML要素を格納する配列
+    //     onSnapshot(q, (querySnapshot) => { // Firestoreのコレクション"lp"からデータを取得
+    //         querySnapshot.forEach((doc) => { // 各ドキュメントに対して処理を行う
+    //             const data = doc.data(); // ドキュメントのデータを取得
+    //             // 参加者の情報をHTMLに変換し、配列に追加
+    //             htmlElements.push(`
+    //             <li>
+    //                 <p>イベント名: ${data.eventName}</p>
+    //                 <p>希望日時: ${data.preferredDateTime}</p>
+    //                 <p>名前（フリガナ）: ${data.nameKana}</p>
+    //                 <p>メールアドレス: ${data.email}</p>
+    //                 <p>電話番号: ${data.phone}</p>
+    //                 <p>参加人数: ${data.attendees}</p>
+    //                 <p>支払い方法: ${data.paymentMethod}</p>
+    //                 <p>意見または質問: ${data.comments}</p>
+    //                 <p>申込日時: ${data.time}</p>
+    //             </li>
+    //         `);
+    //         });
+    //         // 参加者一覧を表示する要素にHTMLをセット
+    //         $("#output").html(htmlElements.join(""));
+    //     });
+    // });
     </script>
 
 
